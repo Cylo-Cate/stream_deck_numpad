@@ -10,12 +10,15 @@ def on_press_key(event):
     
     index = Numpad_Map.get(event.scan_code)
     
-    if index != None:
-        keys[index]["action"](keys[index]["shortcut"])
+    key = keys[index]
 
-# def switch(event):
-#     global solo
-#     solo = not solo
+    if key["action"] is None:
+        return
 
-keyboard.hook(on_press_key)
+    key["action"](key["shortcut"])
+
+
+for scan_code in Numpad_Map:
+    keyboard.hook_key(scan_code, on_press_key, suppress=True)
+    
 keyboard.wait('esc')
