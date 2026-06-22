@@ -37,8 +37,8 @@ Numpad_Map = {
 keys = [
     { #NumLock
         "name": "Lumi",
-        "action": open_file,
-        "shortcut": r"C:\Users\6364.143\Desktop\Lumi.lnk",
+        "action": None,
+        "shortcut": None,
     },
     { #/
         "name": "Gmail",
@@ -91,9 +91,9 @@ keys = [
         "shortcut": None,
     },
     { #1
-        "name": "A",
+        "name": "Youtube",
         "action": open_url,
-        "shortcut": "www.youtube.com",
+        "shortcut": "https://www.youtube.com",
     },
     { #2
         "name": None,
@@ -106,9 +106,9 @@ keys = [
         "shortcut": None,
     },
     { #Enter
-        "name": None,
-        "action": None,
-        "shortcut": None,
+        "name": "",
+        "action": open_url,
+        "shortcut": "www.google.com",
     },
     { #0
         "name": None,
