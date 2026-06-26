@@ -1,0 +1,87 @@
+{
+    "69": {
+        "name": "Pages",
+        "type": "switch_pages",
+        "shortcut": null
+    },
+    "53": {
+        "name": "Gmail",
+        "type": "url",
+        "shortcut": "https://mail.google.com/mail/u/0/?ogbl#inbox"
+    },
+    "55": {
+        "name": "Test",
+        "type": "url",
+        "shortcut": "https://www.music.youtube.com"
+    },
+    "74": {
+        "name": "Manager",
+        "type": "hotkey",
+        "shortcut": "ctrl+shift+esc"
+    },
+    "71": {
+        "name": "Mute Discord",
+        "type": "hotkey",
+        "shortcut": "ctrl+shift+m"
+    },
+    "72": {
+        "name": "Open Chrome",
+        "type": "program",
+        "shortcut": "chrome"
+    },
+    "73": {
+        "name": "Pause/Play",
+        "type": "pause_play",
+        "shortcut": null
+    },
+    "78": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "75": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "76": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "77": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "79": {
+        "name": "Youtube",
+        "type": "url",
+        "shortcut": "https://www.youtube.com"
+    },
+    "80": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "81": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "82": {
+        "name": "",
+        "type": "url",
+        "shortcut": "https://www.google.com"
+    },
+    "126": {
+        "name": null,
+        "type": null,
+        "shortcut": null
+    },
+    "28": {
+        "name": "Close Windows",
+        "type": "hotkey",
+        "shortcut": "win+m"
+    }
+}

@@ -1,6 +1,10 @@
 import os
 import webbrowser
 import keyboard
+import json
+import pyautogui
+
+current_page = 1
 
 def open_file(file):
     os.startfile(file)
@@ -8,116 +12,38 @@ def open_url(site):
     webbrowser.open(site)
 def pause_play(_):
     keyboard.send("play/pause media")
-def shortcuts(binds):
+def shortcut(binds):
     keyboard.send(binds)
-    
-Numpad_Map = {
-    69: 0,   # NumLock
-    53: 1,   # /
-    55: 2,   # *
-    74: 3,   # -
-    71: 4,   # 7
-    72: 5,   # 8
-    73: 6,   # 9
-    78: 7,   # +
-    75: 8,   # 4
-    76: 9,   # 5
-    77: 10,  # 6
-    79: 11,  # 1
-    80: 12,  # 2
-    81: 13,  # 3
-    82: 14,  # 0
-    126: 15, # .
-    28: 16,  # Enter
+def write_text(text):
+    pyautogui.typewrite(text) 
+def pages_switch(_):
+    global current_page
+    current_page += 1
+    if current_page > total_pages:
+        current_page = 1
+    load_page(current_page)
+
+
+
+Actions = {
+    "url": open_url,
+    "program": open_file,
+    "hotkey": shortcut,
+    "pause_play": pause_play,
+    "switch_pages": pages_switch,
+    "text": write_text,
 }
+total_pages = len([
+    file for file in os.listdir("pages")
+    if file.startswith("page") and file.endswith(".json")
+])
+
+
+def load_page(page):
+    global keys
+
+    with open(f"pages/page{page}.json", "r", encoding="utf-8") as f:
+        keys = json.load(f)
 
 
 
-
-keys = [
-    { #NumLock
-        "name": "Lumi",
-        "action": None,
-        "shortcut": None,
-    },
-    { #/
-        "name": "Gmail",
-        "action": open_url,
-        "shortcut": "https://mail.google.com/mail/u/0/?ogbl#inbox",
-    },
-    { #*
-        "name": "Play/Pause",
-        "action": pause_play,
-        "shortcut": None,
-    },
-    { #-
-        "name": "Manager",
-        "action": shortcuts,
-        "shortcut": "ctrl+shift+esc",
-    },
-    { #7
-        "name": "Mute Discord",
-        "action": shortcuts,
-        "shortcut": "ctrl+shift+m",
-    },
-    { #8
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #9
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #+
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #4
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #5
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #6
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #1
-        "name": "Youtube",
-        "action": open_url,
-        "shortcut": "https://www.youtube.com",
-    },
-    { #2
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #3
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #Enter
-        "name": "",
-        "action": open_url,
-        "shortcut": "www.google.com",
-    },
-    { #0
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-    { #.
-        "name": None,
-        "action": None,
-        "shortcut": None,
-    },
-]
