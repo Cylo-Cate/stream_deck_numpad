@@ -8,16 +8,16 @@ def on_press_key(event):
     key = config.keys.get(str(event.scan_code))
 
     if event.is_keypad != True:
-        return
+        return True
     if event.event_type != "down":
-        return
+        return True
     if key["type"] == None:
-        return
+        return True
 
 
     config.Actions[key["type"]](key["shortcut"])
 
-
+print("Stream Deck Iniciado :]")
 for scan_code in config.keys:
     keyboard.hook_key(int(scan_code), on_press_key, suppress=True)
         
